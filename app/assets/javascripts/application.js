@@ -14,3 +14,19 @@
 //= require jquery_ujs
 //= require d3
 //= require_tree .
+ function potato() {
+   var count = document.getElementsByClassName('btn').length;
+   document.getElementsByClassName('btn')[count-1].disabled = true;
+}
+
+function frenchFries() {
+  var count = document.getElementsByClassName("row").length;
+  var section = document.getElementsByClassName("row")[count -1];
+  section.style.display = 'none';
+}
+
+function waffleFries() {
+  var count = document.getElementsByClassName("row").length;
+  var section = document.getElementsByClassName("row")[count -1];
+  section.style.display = 'block';
+}
