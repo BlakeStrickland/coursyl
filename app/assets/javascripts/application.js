@@ -18,15 +18,15 @@
 //    var count = document.getElementsByClassName('btn').length;
 //    document.getElementsByClassName('btn')[count-1].disabled = true;
 // }
-function oneClick(){
-  // button.disabled = true;
-  // button.form.submit();
-  $(this).prop('disabled', true);
-  $("form").submit();
-}
-$(function(){
-  $("input[type=submit]").on("click",oneClick);
-});
+// function oneClick(){
+//   // button.disabled = true;
+//   // button.form.submit();
+//   $(this).prop("disabled", true);
+//   $("form").submit();
+// }
+// $(function(){
+//   $("input[type=submit]").on("click",oneClick);
+// });
 
 function hideRow() {
 last = $(".association.container").last();
