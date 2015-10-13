@@ -14,36 +14,66 @@
 //= require jquery_ujs
 //= require d3
 //= require_tree .
- function oneClick() {
-   var count = document.getElementsByClassName('btn').length;
-   document.getElementsByClassName('btn')[count-1].disabled = true;
+//  function oneClick() {
+//    var count = document.getElementsByClassName('btn').length;
+//    document.getElementsByClassName('btn')[count-1].disabled = true;
+// }
+function oneClick(){
+  // button.disabled = true;
+  // button.form.submit();
+  $(this).prop('disabled', true);
+  $("form").submit();
 }
+$(function(){
+  $("input[type=submit]").on("click",oneClick);
+});
 
 function hideRow() {
-  var count = document.getElementsByClassName("row").length;
-  var section = document.getElementsByClassName("row")[count -1];
-  section.style.display = 'none';
+last = $(".association.container").last();
+  if(last) {
+    last.hide();
+  }
+
+  // var count = document.getElementsByClassName("row").length;
+  // var section = document.getElementsByClassName("row")[count -1];
+  // section.style.display = 'none';
 }
+
+$(hideRow);
+
 
 function showRow() {
-  var count = document.getElementsByClassName("row").length;
-  var section = document.getElementsByClassName("row")[count -1];
-  section.style.display = 'block';
+  $(".association.container").last().show();
+
+  // var count = document.getElementsByClassName("row").length;
+  // var section = document.getElementsByClassName("row")[count -1];
+  // section.style.display = 'block';
 }
+
+$(function () {
+  $(".new-association").on("click", showRow);
+});
 
 function hiddenRow(){
-  var count = document.getElementsByClassName("destroy").length;
-  var checkbox = document.getElementsByClassName("destroy")[count -1];
-  var hideRow = event.target.parentElement.parentElement.parentElement;
-  checkbox.checked = true;
-  hideRow.style.display = "none";
+  $(this).siblings("input[type=checkbox]").prop("checked", true)
+  $("div[class=row]").attr("display", "none")
 }
+$(function(){
+  $(".btn-danger").on("click",hiddenRow);
+});
 
-function silkySmooth(){
-  description  = document.getElementsByName("#anchor-desription").href
-  students = document.getElementsByName("#anchor-students").href
-  assignments = document.getElementsByName("#anchor-assignments").href
-  lessons = document.getElementsByName("#anchor-lessons").href
-  policies = document.getElementsByName("#anchor-policies").href
 
-}
+$(function() {
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
+});
