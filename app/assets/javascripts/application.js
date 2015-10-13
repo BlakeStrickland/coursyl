@@ -31,10 +31,19 @@ function showRow() {
   section.style.display = 'block';
 }
 
-function hideRow(){
+function hiddenRow(){
   var count = document.getElementsByClassName("destroy").length;
   var checkbox = document.getElementsByClassName("destroy")[count -1];
   var hideRow = event.target.parentElement.parentElement.parentElement;
   checkbox.checked = true;
   hideRow.style.display = "none";
+}
+
+function silkySmooth(){
+  description  = document.getElementsByName("#anchor-desription").href
+  students = document.getElementsByName("#anchor-students").href
+  assignments = document.getElementsByName("#anchor-assignments").href
+  lessons = document.getElementsByName("#anchor-lessons").href
+  policies = document.getElementsByName("#anchor-policies").href
+
 }
