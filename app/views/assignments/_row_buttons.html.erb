@@ -24,8 +24,12 @@
           <h3 id="myModalLabel">Assignment Dates</h3>
       </div>
       <div class="modal-body">
-        <%= datetime_select 'assignments', 'active_at', method: :update %>
-        <%= datetime_select 'assignments', 'due_at', method: :update %>
+        <div><%= label_tag :active_at, "Active At: " %>
+           <%= datetime_local_field_tag 'assignments', 'active_at', method: :update %>
+         </div>
+         <div><%= label_tag :active_at, "Due At: " %>
+           <%= datetime_local_field_tag 'assignments', 'due_at', method: :update %>
+         </div>
       </div>
       <div class="modal-footer">
         <a href "javascript:void(0)" class="btn">Close</a>
