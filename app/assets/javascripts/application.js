@@ -63,6 +63,13 @@ $(function(){
 });
 
 
+function myModal() {
+  $('#myModal').modal('show')
+}
+$(function() {
+  $(".fa.fa-calendar").on("click", myModal)
+})
+
 $(function() {
   $('a[href*=#]:not([href=#])').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
